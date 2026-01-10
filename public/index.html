@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MyTropx Reloaded demo — fast product browsing, quick views, smooth carts, and modern e-commerce UX."/>
+  <meta name="theme-color" content="#0e0f10"/>
+  <meta property="og:title" content="MyTropx Reloaded (Demo)"/>
+  <meta property="og:description" content="A sleek, conversion-focused refresh for MyTropx — quick views, fast carts, and checkout-ready UX."/>
+  <meta property="og:type" content="website"/>
+
+  <title>MyTropx Reloaded (Demo)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="brand">
+    <div class="wordmark">MYTROPX</div>
+    <div class="tag">Rugged. Bold. Unapologetic.</div>
+  </div>
+
+  <nav class="nav">
+    <a href="#shop">Shop</a>
+    <a href="#store">Visit Us</a>
+    <a href="#featured">Featured</a>
+    <a href="#new">New</a>
+  </nav>
+
+  <button class="cartBtn" id="cartBtn" aria-expanded="false">
+    🛒 <span class="cartCount" id="cartCount">0</span>
+  </button>
+</header>
+
+<section class="hero">
+  <video class="heroMedia" autoplay muted loop playsinline preload="metadata" poster="assets/img/bg-gradient.jpg">
+    <source src="assets/video/hero-packing.mp4" type="video/mp4" />
+  </video>
+  <img class="heroFallback" src="assets/img/bg-gradient.jpg" alt="" aria-hidden="true" />
+  <div class="heroOverlay"></div>
+  <div class="heroInner">
+    <h1>Gear that looks dangerous… in the best way.</h1>
+    <p>Quick views. Fast carts. Zero friction. Let them picture themselves in it—then make checkout effortless.</p>
+    <div class="heroActions">
+      <a class="btn primary" href="#shop">Shop the Drop</a>
+      <a class="btn ghost" href="#store">In-Store Experience</a>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section id="shop" class="section">
+    <div class="sectionHead">
+      <h2>Shop</h2>
+      <p class="muted">Tap a product for a dramatic quick view (and “See similar” without leaving the page).</p>
+    </div>
+
+    <div class="filters" aria-label="Shop filters">
+      <div class="searchWrap">
+        <input id="searchInput" class="searchInput" type="search" placeholder="Search briefs, jocks, harnesses…" autocomplete="off" />
+      </div>
+      <div class="chipRow" id="chipRow" aria-label="Categories"></div>
+      <div class="sortRow">
+        <label class="muted small" for="sortSelect">Sort</label>
+        <select id="sortSelect" class="sortSelect">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="name">Name</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid" id="productGrid"></div>
+  </section>
+
+  <section id="store" class="section store">
+    <div class="storeCard">
+      <h2>In-Store hits different.</h2>
+      <p class="muted">
+        Try it on. See the textures up close. Get styling help. The store is part of the experience.
+      </p>
+
+      <div class="storeMedia">
+        <img src="assets/img/story-boutique-interior.jpg" alt="Boutique interior" loading="lazy" />
+        <img src="assets/img/story-packing-flatlay.jpg" alt="Orders being packed" loading="lazy" />
+      </div>
+
+      <div class="storeMedia" aria-hidden="false">
+        <img src="assets/img/story-boutique-interior.jpg" alt="Boutique interior" loading="lazy" />
+        <img src="assets/img/story-packing-flatlay.jpg" alt="Orders being packed" loading="lazy" />
+      </div>
+
+      <div class="storeMeta">
+        <div class="pill">Fort Lauderdale</div>
+        <div class="pill">In-Store Pickup Available</div>
+        <div class="pill">Exclusive Finds</div>
+      </div>
+
+      <div class="storeActions">
+        <a class="btn primary" href="#shop">Shop + Pick Up</a>
+        <button class="btn ghost" id="scrollToFeatured">See Featured</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured" class="section">
+    <div class="sectionHead">
+      <h2>Featured</h2>
+      <p class="muted">High-impact pieces that convert—fast.</p>
+    </div>
+    <div class="rail" id="featuredRail"></div>
+  </section>
+
+  <section id="new" class="section">
+    <div class="sectionHead">
+      <h2>New Drops</h2>
+      <p class="muted">Fresh gear, same attitude.</p>
+    </div>
+    <div class="rail" id="newRail"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footerInner">
+    <div>
+      <div class="wordmark small">MYTROPX</div>
+      <div class="muted">Demo experience — modernized e-commerce pitch build.</div>
+    </div>
+    <div class="muted">© 2026</div>
+  </div>
+</footer>
+
+<!-- Product Quick View Modal -->
+<div class="modalBg" id="modalBg" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modalClose" id="modalClose" aria-label="Close">✕</button>
+
+    <div class="modalBody">
+      <div class="modalMedia">
+        <img id="modalImg" alt="">
+      </div>
+
+      <div class="modalInfo">
+        <h3 id="modalTitle"></h3>
+        <div class="priceRow">
+          <div class="price" id="modalPrice"></div>
+          <div class="hint" id="modalHint"></div>
+        </div>
+
+        <p class="modalDesc" id="modalDesc"></p>
+        <div class="dropRow" id="dropRow" aria-hidden="true">
+          <span class="dropBadge">Limited Drop</span>
+          <span class="dropTimer" id="dropTimer"></span>
+        </div>
+
+        <div class="sizeRow" id="sizeRow"></div>
+
+        <div class="modalActions">
+          <button class="btn primary" id="addToCartBtn">Add to cart</button>
+          <button class="btn ghost" id="quickCheckoutBtn">Checkout now</button>
+        </div>
+
+        <div class="similar">
+          <div class="similarHead">
+            <span class="muted">See similar</span>
+          </div>
+          <div class="similarGrid" id="similarGrid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Dropdown -->
+<div class="cartDrop" id="cartDrop" aria-hidden="true">
+  <div class="cartHead">
+    <div>
+      <div class="cartTitle">Your Cart</div>
+      <div class="muted small" id="shippingMotivation">Free shipping over $100</div>
+      <div class="shipProg" id="shipProg" aria-hidden="true">
+        <div class="shipProgFill" id="shipProgFill"></div>
+      </div>
+      <div class="muted tiny" id="shipProgText"></div>
+    </div>
+    <button class="linkBtn" id="clearCartBtn">Clear</button>
+  </div>
+
+  <div class="fulfillment">
+    <label class="radio">
+      <input type="radio" name="fulfillment" value="ship" checked />
+      <span>Ship it</span>
+    </label>
+    <label class="radio">
+      <input type="radio" name="fulfillment" value="pickup" />
+      <span>Pick up in store</span>
+    </label>
+  </div>
+
+  <div class="cartItems" id="cartItems"></div>
+
+  <div class="cartFooter">
+    <div class="row">
+      <span class="muted">Subtotal</span>
+      <strong id="subtotal">$0.00</strong>
+    </div>
+
+    <div class="row" id="estRow">
+      <span class="muted">Est. shipping</span>
+      <span id="estShip">$0.00</span>
+    </div>
+
+    <button class="btn primary full" id="checkoutBtn" disabled>Checkout</button>
+    <div class="muted tiny">
+      Secure payment powered by Stripe Checkout (demo).
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" aria-hidden="true"></div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+[
+  {
+    "id": "MP-2053",
+    "name": "Neo Zipper Brief",
+    "price": 34.99,
+    "tags": [
+      "new",
+      "best seller",
+      "zipper"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Underwear",
+    "image": "assets/img/products/product-01.jpg",
+    "description": "Matte finish, clean lines, and a fit that sits right. Built for nights out and last-call confidence."
+  },
+  {
+    "id": "UGS-1001",
+    "name": "ManPak Neoprene Jock",
+    "price": 29.99,
+    "tags": [
+      "manpak",
+      "sport",
+      "support"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "category": "Underwear",
+    "image": "assets/img/products/product-02.jpg",
+    "description": "High-compression comfort with hardware details that pop. Feels premium\u2014looks expensive."
+  },
+  {
+    "id": "UGS-2007",
+    "name": "UGS Night Brief",
+    "price": 39.99,
+    "tags": [
+      "limited",
+      "night",
+      "comfort"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Underwear",
+    "image": "assets/img/products/product-03.jpg",
+    "description": "Minimal, sharp, and unapologetic. Designed to flex under streetlights and camera flash."
+  },
+  {
+    "id": "UGS-2010",
+    "name": "UGS Grey Jockstrap",
+    "price": 26.99,
+    "tags": [
+      "classic",
+      "everyday"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Underwear",
+    "image": "assets/img/products/product-04.jpg",
+    "description": "Performance stretch with a sculpted cut. Comfortable enough to live in; bold enough to show off."
+  },
+  {
+    "id": "SLG-3002",
+    "name": "Slingshot Thong",
+    "price": 22.99,
+    "tags": [
+      "minimal",
+      "hot"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "category": "Underwear",
+    "image": "assets/img/products/product-05.jpg",
+    "description": "Soft-touch fabric, structured seams, and a silhouette that turns heads. No compromises."
+  },
+  {
+    "id": "SWM-4100",
+    "name": "Tropx Swim Brief",
+    "price": 44.99,
+    "tags": [
+      "summer",
+      "swim"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Swimwear",
+    "image": "assets/img/products/product-06.jpg",
+    "description": "Breathable mesh with a heavyweight feel. The kind of piece people ask about."
+  },
+  {
+    "id": "APP-5101",
+    "name": "Mesh Tank \u2014 Black",
+    "price": 24.99,
+    "tags": [
+      "mesh",
+      "layer"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Apparel",
+    "image": "assets/img/products/product-07.jpg",
+    "description": "Engineered support with a sleek finish. Elevated basics for elevated taste."
+  },
+  {
+    "id": "ACC-6109",
+    "name": "Neon Harness",
+    "price": 49.99,
+    "tags": [
+      "neon",
+      "statement"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "category": "Accessories",
+    "image": "assets/img/products/product-08.jpg",
+    "description": "Clean strap work, durable clips, and a serious fit. Built to move with you."
+  },
+  {
+    "id": "GR-7204",
+    "name": "Leather Cuffs Set",
+    "price": 54.99,
+    "tags": [
+      "leather",
+      "set"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "category": "Gear",
+    "image": "assets/img/products/product-09.jpg",
+    "description": "Polished hardware, reinforced stitching, and a luxe feel. Premium without the precious."
+  },
+  {
+    "id": "ACC-6301",
+    "name": "Travel Dopp Kit",
+    "price": 19.99,
+    "tags": [
+      "travel",
+      "storage"
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "category": "Accessories",
+    "image": "assets/img/products/product-10.jpg",
+    "description": "Smooth, structured, and sharp\u2014like the outfit you planned three days in advance."
+  },
+  {
+    "id": "APP-5400",
+    "name": "Limited Drop Tee",
+    "price": 28.99,
+    "tags": [
+      "limited",
+      "drop"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "category": "Apparel",
+    "image": "assets/img/products/product-11.jpg",
+    "description": "Statement piece energy with everyday comfort. Add-to-cart bait, basically."
+  },
+  {
+    "id": "GFT-9000",
+    "name": "Digital Gift Card",
+    "price": 50.0,
+    "tags": [
+      "gift",
+      "instant"
+    ],
+    "sizes": [
+      "$25",
+      "$50",
+      "$100"
+    ],
+    "category": "Gift Cards",
+    "image": "assets/img/products/product-12.jpg",
+    "description": "Limited-run vibe with premium texture. Once it\u2019s gone\u2026 it\u2019s gone."
+  }
+]

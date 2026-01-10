@@ -1,0 +1,10 @@
+tropx-demo/
+├─ server.js
+├─ package.json
+├─ .env.example
+└─ public/
+   ├─ index.html
+   ├─ success.html
+   ├─ cancel.html
+   ├─ style.css
+   └─ script.js
