@@ -310,7 +310,7 @@ body{
   height:100%;
   object-fit:cover;
   transform: scale(1.035);
-  opacity: 0.18;          /* lower = more faded */
+  opacity: 0.22;          /* lower = more faded */
   mix-blend-mode: normal;
   filter: blur(1.2px) saturate(0.95) contrast(1.18) brightness(1.10);
 }
