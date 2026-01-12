@@ -293,7 +293,7 @@ body{
   .card{grid-column: span 12}
 }
 
-/* === Hero media (local video + safe fallbacks) === */
+/* === Hero media (works for <video class="heroMedia"> OR <div class="heroMedia"><video>...) === */
 .heroMedia{
   position:absolute;
   z-index:0;
@@ -303,30 +303,25 @@ body{
   pointer-events:none;
 }
 
+/* Apply the visual treatment to BOTH possibilities */
+.heroMedia,
 .heroMedia video{
   width:100%;
   height:100%;
   object-fit:cover;
   transform: scale(1.035);
-  opacity: 0.08;            /* subtle motion layer */
-  mix-blend-mode: normal;   /* avoid iOS compositing weirdness */
+  opacity: 0.08;          /* lower = more faded */
+  mix-blend-mode: normal;
   filter: blur(1.2px) saturate(0.95) contrast(1.18) brightness(1.10);
 }
 
+/* kill fallback layer cleanly */
 .heroFallback{ display:none; }
-  pointer-events: none;
-  position:absolute;
-  inset: -2px;              /* was inset:0 */
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  object-fit:cover;
-  opacity: 0.72;            /* was 0.28 (too faint) */
-  filter: brightness(0.78) contrast(1.06) saturate(1.05);
-}
 
 @media (prefers-reduced-motion: reduce){
   .heroMedia{ display:none; }
 }
+
 
 /* Store imagery */
 .storeMedia{
