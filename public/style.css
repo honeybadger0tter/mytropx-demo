@@ -63,25 +63,32 @@ body{
   display:grid;
   place-items:center;
   overflow:hidden;
-  border-bottom:1px solid var(--line);
+  border-bottom: none;
   background:
+    linear-gradient(180deg, rgba(0,0,0,.40), rgba(0,0,0,.62)),
     radial-gradient(900px 420px at 60% 30%, rgba(225,29,72,.18), transparent 60%),
     radial-gradient(800px 420px at 10% 80%, rgba(255,255,255,.06), transparent 65%),
     url("assets/img/hero-neon-storefront.jpg");
   background-size:cover;
   background-position:center;
 }
+
 .heroOverlay{
-  position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
+  position:absolute;   /* lowercase */
+  z-index:1;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.30));
 }
+
 .heroInner{
   position:relative;
-  z-index:1;
+  z-index:2;           /* lowercase */
   width:min(980px, 92vw);
   padding:34px 0;
   text-align:left;
 }
+
 .heroInner h1{
   margin:0 0 10px;
   font-size: clamp(28px, 4vw, 48px);
@@ -289,9 +296,10 @@ body{
 /* === Hero media (local video + safe fallbacks) === */
 .heroMedia{
   position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
+  z-index:0;
+  inset:-2px;
+  width:calc(100% + 4px);
+  height:calc(100% + 4px);
   pointer-events:none;
 }
 
@@ -300,20 +308,20 @@ body{
   height:100%;
   object-fit:cover;
   transform: scale(1.035);
-  opacity: 0.30;
-  mix-blend-mode: soft-light;
-  filter: blur(0.6px) saturate(0.95) contrast(1.15) brightness(1.06);
+  opacity: 0.16;            /* subtle motion layer */
+  mix-blend-mode: normal;   /* avoid iOS compositing weirdness */
+  filter: blur(0.8px) saturate(0.95) contrast(1.10) brightness(1.08);
 }
 
-.heroFallback{
+.heroFallback{ display:none; }
+  pointer-events: none;
   position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
+  inset: -2px;              /* was inset:0 */
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   object-fit:cover;
-  opacity:0.28;
-  pointer-events:none;
-  filter: brightness(1.06) contrast(1.05);
+  opacity: 0.92;            /* was 0.28 (too faint) */
+  filter: brightness(0.78) contrast(1.06) saturate(1.05);
 }
 
 @media (prefers-reduced-motion: reduce){
