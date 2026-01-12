@@ -308,7 +308,7 @@ body{
   height:100%;
   object-fit:cover;
   transform: scale(1.035);
-  opacity: 0.02;            /* subtle motion layer */
+  opacity: 0.08;            /* subtle motion layer */
   mix-blend-mode: normal;   /* avoid iOS compositing weirdness */
   filter: blur(1.2px) saturate(0.95) contrast(1.18) brightness(1.10);
 }
@@ -320,7 +320,7 @@ body{
   width: calc(100% + 4px);
   height: calc(100% + 4px);
   object-fit:cover;
-  opacity: 0.92;            /* was 0.28 (too faint) */
+  opacity: 0.72;            /* was 0.28 (too faint) */
   filter: brightness(0.78) contrast(1.06) saturate(1.05);
 }
 
